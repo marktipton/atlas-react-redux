@@ -12,7 +12,6 @@ function App() {
   <>
     <Header />
     <DeleteListButton />
-    <Card />
     <DeleteCardButton />
     <NewCardForm />
     <Board />
