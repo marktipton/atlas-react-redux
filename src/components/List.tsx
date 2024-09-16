@@ -3,7 +3,7 @@ import  Card  from './Card'
 
 const List = () => {
   return (
-    <div>
+    <div className='p-4'>
       <h1>Title</h1>
       <Card />
       <Card />
