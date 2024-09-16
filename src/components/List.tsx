@@ -3,8 +3,8 @@ import  Card  from './Card'
 
 const List = () => {
   return (
-    <div className='p-4'>
-      <h1>Title</h1>
+    <div className='p-1 flex flex-col justify-between'>
+      <h1 className='text-center'>To Do</h1>
       <Card />
       <Card />
       <Card />
