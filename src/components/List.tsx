@@ -1,6 +1,7 @@
 import React from 'react'
 import  Card  from './Card'
 import DeleteListButton from './DeleteListButton'
+import NewCardForm from './NewCardForm'
 
 const List = () => {
   return (
@@ -10,6 +11,7 @@ const List = () => {
       <Card />
       <Card />
       <Card />
+      <NewCardForm />
     </div>
   )
 }
