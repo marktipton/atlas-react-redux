@@ -1,15 +1,19 @@
 import Footer from "./Footer";
 import Header from "./Header";
 import Board from "./Board";
+import { Provider } from "react-redux";
+import { store } from "../store";
 
 
 function App() {
   return (
-  <div className="">
-    <Header />
-    <Board />
-    <Footer />
-  </div>
+    <Provider store={store}>
+      <div className="">
+        <Header />
+        <Board />
+        <Footer />
+      </div>
+    </Provider>
 
   );
 }
