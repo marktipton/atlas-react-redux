@@ -4,11 +4,11 @@ import DeleteListButton from './DeleteListButton'
 
 const List = () => {
   return (
-    <div className='group relative p-1 flex flex-col justify-between'>
+    <div className='group/list h-full min-w-96 p-4'>
       <div className='opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
         <DeleteListButton />
       </div>
-      <h1 className='text-center'>To Do</h1>
+      <h3 className='text-center'>To Do</h3>
       <Card />
       <Card />
       <Card />
