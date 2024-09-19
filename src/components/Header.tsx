@@ -3,8 +3,8 @@ import  logo  from '../assets/logo.png';
 
 const Header = () => {
   return (
-    <div className='bg-orange-50 flex-initial w- items-center'>
-      <img src={logo} alt="atlas logo" className='object-cover h-auto w-12'/>
+    <div className='sticky top-0 border-b-2 border-blue bg-off-white-light pb-8 pt-8'>
+      <img src={logo} alt="atlas logo" className='logo mx-auto w-56'/>
     </div>
   )
 }
