@@ -12,7 +12,7 @@ const Footer = () => {
         />
         <button
           type="submit"
-          className="rounded bg-teal px-6 py-4 text-xl font-semibold text-off-white-light"
+          className="rounded bg-teal px-6 py-4 text-xl font-semibold text-off-white-light mr-4"
         >
           Save
         </button>
