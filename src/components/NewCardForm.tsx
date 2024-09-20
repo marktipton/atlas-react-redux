@@ -3,7 +3,7 @@ import React from 'react'
 const NewCardForm = () => {
   return (
     <div className='group/new-card m-3 flex h-44 w-full justify-center'>
-       <form
+        <form
           // onSubmit="alert('Create card')"
           className="hidden min-h-24 w-full flex-col items-start rounded bg-off-white-light px-4 text-blue group-hover/new-card:flex"
         >

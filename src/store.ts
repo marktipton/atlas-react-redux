@@ -1,8 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from "react-redux";
+import listsSliceReducer from './slices/listsSlice';
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    lists: listsSliceReducer,
+  },
 });
 
 // These types are helpful for the typescript autocomplete
