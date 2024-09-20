@@ -23,9 +23,12 @@ export const listsSlice = createSlice({
     deleteList: (state, action) => {
       state.lists = state.lists.filter((list) => list.id !== action.payload.id);
     },
+    clearBoard: (state) => {
+      state.lists = []; // Clear all lists
+    },
   },
 });
 
-export const { addList, deleteList } = listsSlice.actions;
+export const { addList, deleteList, clearBoard } = listsSlice.actions;
 
 export default listsSlice.reducer;

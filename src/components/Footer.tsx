@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useAppDispatch } from '../store';
-import { addList } from '../slices/listsSlice';
+import { addList, clearBoard } from '../slices/listsSlice';
 
 const Footer = () => {
   const [listTitle, setListTitle] = useState('');
@@ -9,9 +9,13 @@ const Footer = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (listTitle.trim()) {
-      dispatch(addList({ title: listTitle })); // Dispatch addList action with the title
-      setListTitle(''); // Clear input after submission
+      dispatch(addList({ title: listTitle }));
+      setListTitle(''); // reset list title after submission
     }
+  };
+
+  const handleClearBoard = () => {
+    dispatch(clearBoard());
   };
   return (
     <div className='sticky bottom-0 left-0 flex w-screen items-center justify-center space-x-8 border-t-2 border-blue bg-off-white-light p-8'>
@@ -31,6 +35,7 @@ const Footer = () => {
         </button>
         <button
           type="button"
+          onClick={handleClearBoard}
           className="rounded bg-teal px-6 py-4 text-xl font-semibold text-off-white-light"
         >
           Clear Board
