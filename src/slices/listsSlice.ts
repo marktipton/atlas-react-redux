@@ -1,16 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { nanoid } from "nanoid";
 
 const initialState = {
-  items: [
-    { id: "1", name: "Item 1", completed: false },
-    { id: "2", name: "Item 2", completed: true },
+  lists: [
+    { id: nanoid(), title: "To Do", cardIds: [] },
+    { id: nanoid(), title: "In Progress", cardIds: [] },
+    { id: nanoid(), title: "Completed", cardIds: [] },
   ],
 };
 
 export const listsSlice = createSlice({
-  name: "list",
+  name: "lists",
   initialState,
-  reducers: {},
+  reducers: {
+    addList: (state, action) => {
+      state.lists.push({
+        id: nanoid(),
+        title: action.payload.title,
+        cardIds: [],
+      });
+    },
+  },
 });
+
+export const { addList } = listsSlice.actions;
 
 export default listsSlice.reducer;
