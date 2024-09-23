@@ -4,6 +4,8 @@ import { nanoid } from "nanoid";
 const initialState = {
   cards: [
     { id: nanoid(), title: "Lorem ipsum dolor", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, fugiat!" },
+    { id: nanoid(), title: "Lorem ipsum dolor", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, fugiat!" },
+    { id: nanoid(), title: "Lorem ipsum dolor", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, fugiat!" },
   ],
 };
 
