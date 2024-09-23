@@ -13,7 +13,7 @@ const List = ({ title, listId }: { title: string, listId: string }) => {
       <h3 className='text-center'>{title}</h3>
       <div>
         {cards.map((card) => (
-          <Card cardId={card.id} cardTitle={card.title} cardDescription={card.description} />
+          <Card cardId={card.id} cardTitle={card.title} cardDescription={card.description}/>
         ))}
       </div>
       <NewCardForm />

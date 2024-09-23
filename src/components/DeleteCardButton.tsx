@@ -2,7 +2,7 @@ import React from 'react'
 import { useAppDispatch } from '../store'
 import { deleteCard } from '../slices/cardsSlice'
 
-const DeleteCardButton = ({cardId}: {cardId: number}) => {
+const DeleteCardButton = ({cardId}: {cardId: string}) => {
   const dispatch = useAppDispatch();
 
   const handleDelete = () => {

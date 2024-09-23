@@ -3,9 +3,9 @@ import { nanoid } from "nanoid";
 
 const initialState = {
   cards: [
-    { id: nanoid(), title: "Lorem ipsum dolor", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, fugiat!" },
-    { id: nanoid(), title: "Lorem ipsum dolor", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, fugiat!" },
-    { id: nanoid(), title: "Lorem ipsum dolor", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, fugiat!" },
+    { id: nanoid(), title: "Lorem ipsum dolor1", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, fugiat!", listId: nanoid()},
+    { id: nanoid(), title: "Lorem ipsum dolor2", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, fugiat!", listId: nanoid()},
+    { id: nanoid(), title: "Lorem ipsum dolor3", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, fugiat!", listId: nanoid()},
   ],
 };
 
@@ -18,6 +18,7 @@ export const cardsSlice = createSlice({
         id: nanoid(),
         title: action.payload.title,
         description: action.payload.description,
+        listId: action.payload.listId,
       });
     },
     deleteCard: (state, action) => {
