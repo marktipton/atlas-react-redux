@@ -3,7 +3,7 @@ import { useAppDispatch } from '../store';
 import { addCard } from '../slices/cardsSlice';
 
 
-const NewCardForm = () => {
+const NewCardForm = ({ listId }: { listId: string }) => {
   const [cardTitle, setCardTitle] = useState('');
   const [cardDescription, setCardDescription] = useState('');
 
@@ -11,8 +11,8 @@ const NewCardForm = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (cardTitle.trim()) {
-      dispatch(addCard({ title: cardTitle, description: cardDescription}));
+    if (cardTitle.trim() && cardDescription.trim()) {
+      dispatch(addCard({ title: cardTitle, description: cardDescription, listId: listId}));
       setCardTitle(''); // reset card title after submission
       setCardDescription(''); // reset description after submission
     }
