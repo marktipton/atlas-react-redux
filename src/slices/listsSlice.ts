@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { nanoid } from "nanoid";
 
+export const listIds = [nanoid(), nanoid(), nanoid()];
+
 const initialState = {
   lists: [
-    { id: nanoid(), title: "To Do", cardIds: [] },
-    { id: nanoid(), title: "In Progress", cardIds: [] },
-    { id: nanoid(), title: "Completed", cardIds: [] },
+    { id: listIds[0], title: "To Do", cardIds: [] },
+    { id: listIds[1], title: "In Progress", cardIds: [] },
+    { id: listIds[2], title: "Completed", cardIds: [] },
   ],
 };
 

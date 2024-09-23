@@ -1,11 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { nanoid } from "nanoid";
+import { listIds } from './listsSlice';
 
 const initialState = {
   cards: [
-    { id: nanoid(), title: "Lorem ipsum dolor1", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, fugiat!", listId: nanoid()},
-    { id: nanoid(), title: "Lorem ipsum dolor2", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, fugiat!", listId: nanoid()},
-    { id: nanoid(), title: "Lorem ipsum dolor3", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, fugiat!", listId: nanoid()},
+    { id: nanoid(), title: "Lorem ipsum dolor1", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, fugiat!", listId: listIds[0]},
+    { id: nanoid(), title: "Lorem ipsum dolor2", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, fugiat!", listId: listIds[0]},
+    { id: nanoid(), title: "Lorem ipsum dolor3", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, fugiat!", listId: listIds[0]},
+
+    { id: nanoid(), title: "Lorem ipsum dolor1", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, fugiat!", listId: listIds[1]},
+    { id: nanoid(), title: "Lorem ipsum dolor2", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, fugiat!", listId: listIds[1]},
+    { id: nanoid(), title: "Lorem ipsum dolor3", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, fugiat!", listId: listIds[1]},
+
+    { id: nanoid(), title: "Lorem ipsum dolor1", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, fugiat!", listId: listIds[2]},
+    { id: nanoid(), title: "Lorem ipsum dolor2", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, fugiat!", listId: listIds[2]},
+    { id: nanoid(), title: "Lorem ipsum dolor3", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, fugiat!", listId: listIds[2]},
   ],
 };
 
