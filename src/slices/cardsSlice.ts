@@ -20,15 +20,15 @@ export const cardsSlice = createSlice({
         description: action.payload.description,
       });
     },
-    // deleteCard: (state, action) => {
-    //   state.lists = state.lists.filter((list) => list.id !== action.payload.id);
-    // },
+    deleteCard: (state, action) => {
+      state.cards = state.cards.filter((card) => card.id !== action.payload.id);
+    },
     // clearBoard: (state) => {
     //   state.lists = []; // Clear all lists
     // },
   },
 });
 
-export const { addCard } = cardsSlice.actions;
+export const { addCard, deleteCard } = cardsSlice.actions;
 
 export default cardsSlice.reducer;
