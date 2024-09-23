@@ -33,12 +33,16 @@ export const cardsSlice = createSlice({
     deleteCard: (state, action) => {
       state.cards = state.cards.filter((card) => card.id !== action.payload.id);
     },
-    // clearBoard: (state) => {
-    //   state.lists = []; // Clear all lists
-    // },
+    moveCard: (state, action) => {
+      const { cardId, newListId } = action.payload;
+      const card = state.cards.find((card) => card.id === cardId);
+      if (card) {
+        card.listId = newListId;
+      }
+    },
   },
 });
 
-export const { addCard, deleteCard } = cardsSlice.actions;
+export const { addCard, deleteCard, moveCard } = cardsSlice.actions;
 
 export default cardsSlice.reducer;
