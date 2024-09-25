@@ -1,5 +1,5 @@
-import { test, expect, beforeEach, vi } from 'vitest';
-import listsReducer, { addList } from '../slices/listsSlice';
+import { test, expect, vi } from 'vitest';
+import listsReducer, { addList, deleteList, clearBoard } from '../slices/listsSlice';
 
 // mock only nanoid function and use the actual nanoid import for other uses.
 vi.mock('nanoid', async () => {
@@ -28,4 +28,19 @@ test('should handle adding a list', () => {
     title: 'New List',
     cardIds: [],
   });
+});
+
+test('deleting a list removes the list', () => {
+  const action = deleteList({ id: '2' });
+  const nextState = listsReducer(initialState, action);
+
+  expect(nextState.lists).toHaveLength(2); // Expect 2 lists after deleting
+  expect(nextState.lists.find((list) => list.id === '2')).toBeUndefined();
+});
+
+test('should handle clearing the board', () => {
+  const action = clearBoard();
+  const nextState = listsReducer(initialState, action);
+
+  expect(nextState.lists).toHaveLength(0); // Expect all lists to be cleared
 });
