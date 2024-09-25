@@ -1,5 +1,5 @@
 import { test, expect, vi } from 'vitest';
-import cardsReducer, { addCard } from '../slices/cardsSlice';
+import cardsReducer, { addCard, deleteCard, moveCard } from '../slices/cardsSlice';
 
 vi.mock('nanoid', async () => {
   const actual = await vi.importActual<typeof import('nanoid')>('nanoid');
@@ -28,4 +28,20 @@ test('should handle adding a card', () => {
     description: 'New Description',
     listId: 'list-1',
   });
+});
+
+test('should handle deleting a card', () => {
+  const action = deleteCard({ id: '2' });
+  const nextState = cardsReducer(initialState, action);
+
+  expect(nextState.cards).toHaveLength(2); // Card 2 should be deleted
+  expect(nextState.cards.find(card => card.id === '2')).toBeUndefined(); // Ensure card 2 is gone
+});
+
+// Test moving a card
+test('should handle moving a card to a different list', () => {
+  const action = moveCard({ cardId: '3', newListId: 'list-1' });
+  const nextState = cardsReducer(initialState, action);
+
+  expect(nextState.cards.find(card => card.id === '3')?.listId).toBe('list-1'); // Card 3 should be in list-1 now
 });
